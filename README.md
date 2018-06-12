@@ -21,7 +21,7 @@ The above sample uses the Event Grid data plane SDK (Microsoft.Azure.EventGrid) 
 - .NET Core 2.0 or higher
  1. Create an Azure Event Grid topic: You will need to first create an Event Grid topic. The steps are described at https://docs.microsoft.com/en-us/azure/event-grid/scripts/event-grid-cli-create-custom-topic. Make a note of the topic details. 
  2. Create an Azure Relay Hybrid connection. https://docs.microsoft.com/en-us/azure/service-bus-relay/relay-hybrid-connections-http-requests-dotnet-get-started. Make a note of the hybrid connection details. 
- 3. Create an event subscription on the topic(created in step#1) using hybrid connection as a destination (created in step#2). Replace 
+ 3. Create an event subscription on the topic(created in step#1) using hybrid connection as a destination (created in step#2) using following azure CLI commands 
     ```azurecli-interactive
 
     # Replace with relay hybrid connection details
