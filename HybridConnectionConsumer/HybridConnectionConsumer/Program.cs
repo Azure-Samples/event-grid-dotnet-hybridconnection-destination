@@ -13,7 +13,7 @@ namespace HybridConnectionConsumer
     {
         const string StorageBlobCreatedEvent = "Microsoft.Storage.BlobCreated";
 
-        const string CustomTopicEvent = "Contoso.Items.ItemReceivedEvent";
+        const string CustomTopicEvent = "Contoso.Items.ItemReceived";
 
         class ContosoItemReceivedEventData
         {
