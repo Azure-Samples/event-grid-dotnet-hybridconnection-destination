@@ -6,11 +6,11 @@ author: kishp
 
 # Microsoft Azure Event Grid Hybrid Connection Consumer sample for C#
 
-This contains C# sample to consume events from Azure Event Grid using an Azure relay hybrid connection listener.
+This contains a C# sample to consume events from Azure Event Grid using an Azure relay hybrid connection listener.
 
 ## Features
 
-These sample demonstrates how to process event grid events which are delivered to an Azure relay hybrid connection destination.
+This sample demonstrates how to process event grid events which are delivered to an Azure relay hybrid connection destination.
 
 The above sample uses the Event Grid data plane SDK (Microsoft.Azure.EventGrid) and Azure Relay SDK (Microsoft.Azure.Relay).
 
@@ -57,9 +57,7 @@ The above sample uses the Event Grid data plane SDK (Microsoft.Azure.EventGrid) 
 
  ### Running the Sample
 
- The following are the steps to run the data plane samples and see events flowing through Event Grid:
-
-
+ 1. The following are the steps to run the HybridConnectionConsumer sample and see events received on hybrid connection listener:
 
     a. Load HybridConnectionConsumer project in Visual Studio.
 
@@ -67,11 +65,9 @@ The above sample uses the Event Grid data plane SDK (Microsoft.Azure.EventGrid) 
 
     c. Run this application from Visual Studio to listen for Event Grid Events.
 
- 2. Use Event Grid publisher sample(https://github.com/Azure-Samples/event-grid-dotnet-publish-consume-events/tree/master/EventGridPublisher/EventGridPublisher) to publisher events to the topic that you created in pre-requisites.
+2. Use Event Grid publisher sample(https://github.com/Azure-Samples/event-grid-dotnet-publish-consume-events/tree/master/EventGridPublisher/EventGridPublisher) to publisher events to the topic that you created in pre-requisites.
 
-
-    
-3. Verify that you received the events in the HybridConnectionConsumer console..
+3. Verify that you received the events in the HybridConnectionConsumer console.
  
 ## Resources
 
