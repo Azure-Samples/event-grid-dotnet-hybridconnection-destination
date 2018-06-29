@@ -61,7 +61,7 @@ The above sample uses the Event Grid data plane SDK (Microsoft.Azure.EventGrid) 
 
     a. Load HybridConnectionConsumer project in Visual Studio.
 
-    b. In Program.cs, replace the <relayConnectionString> and <hybridConnectionName> with the relay connection string and hybrid connection name that you created in pre-requisites.
+    b. In Program.cs, replace the `<relayConnectionString>` and `<hybridConnectionName>` with the relay connection string and hybrid connection name that you created in pre-requisites.
 
     c. Run this application from Visual Studio to listen for Event Grid Events.
 
