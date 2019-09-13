@@ -1,7 +1,11 @@
 ---
-services: event-grid
-platforms: dotnet
-author: kishp
+page_type: sample
+languages:
+- csharp
+products:
+- azure
+description: "This contains a C# sample to consume events from Azure Event Grid using an Azure relay hybrid connection listener."
+urlFragment: event-grid-dotnet-hybridconnection-destination
 ---
 
 # Microsoft Azure Event Grid Hybrid Connection Consumer sample for C#
