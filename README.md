@@ -57,7 +57,7 @@ The above sample uses the Event Grid data plane SDK (Microsoft.Azure.EventGrid) 
 
 - Visual Studio 2017 Version 15.5 or later.
 
- Clone this repository onto your local machine. Compile the samples inside Visual Studio, the required Microsoft Azure Event Grid SDK components will automatically be downloaded from nuget.org.
+ Clone this repository onto your local machine. Compile the samples inside Visual Studio, the required Azure Messaging Event Grid SDK components will automatically be downloaded from nuget.org.
 
  ### Running the Sample
 
