@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Configuration;
 using System.IO;
-using System.Threading.Tasks;
 using Microsoft.Azure.Relay;
 using Azure.Messaging.EventGrid.SystemEvents;
 using Azure.Messaging.EventGrid;
