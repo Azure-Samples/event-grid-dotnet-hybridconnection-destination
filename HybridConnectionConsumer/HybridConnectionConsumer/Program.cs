@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Configuration;
 using System.IO;
-using System.Threading.Tasks;
-using Microsoft.Azure.EventGrid.Models;
 using Microsoft.Azure.Relay;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using Azure.Messaging.EventGrid.SystemEvents;
+using Azure.Messaging.EventGrid;
 
 namespace HybridConnectionConsumer
 {
@@ -17,7 +14,6 @@ namespace HybridConnectionConsumer
 
         class ContosoItemReceivedEventData
         {
-            [JsonProperty(PropertyName = "itemSku")]
             public string ItemSku { get; set; }
         }
 
@@ -45,23 +41,22 @@ namespace HybridConnectionConsumer
         static void ProcessEventGridEvents(RelayedHttpListenerContext context)
         {
             var content = new StreamReader(context.Request.InputStream).ReadToEnd();
-            EventGridEvent[] eventGridEvents = JsonConvert.DeserializeObject<EventGridEvent[]>(content);
+            EventGridEvent[] eventGridEvents = EventGridEvent.ParseMany(BinaryData.FromString(content));
 
             foreach (EventGridEvent eventGridEvent in eventGridEvents)
             {
                 Console.WriteLine($"Received event {eventGridEvent.Id} with type:{eventGridEvent.EventType}");
-                JObject dataObject = eventGridEvent.Data as JObject;
 
                 if (string.Equals(eventGridEvent.EventType, StorageBlobCreatedEvent, StringComparison.OrdinalIgnoreCase))
                 {
                     // Deserialize the data portion of the event into StorageBlobCreatedEventData
-                    var eventData = dataObject.ToObject<StorageBlobCreatedEventData>();
+                    var eventData = eventGridEvent.Data.ToObjectFromJson<StorageBlobCreatedEventData>();
                     Console.WriteLine($"Got BlobCreated event data, blob URI {eventData.Url}");
                 }
                 else if (string.Equals(eventGridEvent.EventType, CustomTopicEvent, StringComparison.OrdinalIgnoreCase))
                 {
                     // Deserialize the data portion of the event into ContosoItemReceivedEventData
-                    var eventData = dataObject.ToObject<ContosoItemReceivedEventData>();
+                    var eventData = eventGridEvent.Data.ToObjectFromJson<ContosoItemReceivedEventData>();
                     Console.WriteLine($"Got ContosoItemReceived event data, item SKU {eventData.ItemSku}");
                 }
                 else
